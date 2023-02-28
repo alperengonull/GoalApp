@@ -1,14 +1,15 @@
-import {useState} from 'react';
+
+import React,{useState} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   Button,
   TextInput,
   FlatList,
-  ScrollView,
 } from 'react-native';
-import React from 'react';
+import GoalItem from '../components/GoalItem';
+
+
 
 const App = () => {
   const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -38,11 +39,7 @@ const App = () => {
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
-            return (
-              <Text style={styles.goalContainerText}>
-                {itemData.item}
-              </Text>
-            );
+           return  <GoalItem   />
           }}
         />
       </View>
